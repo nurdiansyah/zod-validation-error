@@ -1,5 +1,11 @@
 # @causaly/zod-validation-error
 
+## 3.4.2
+
+### Patch Changes
+
+- e2dc985: fix package.json exports
+
 ## 3.4.1
 
 ### Patch Changes

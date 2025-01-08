@@ -1,5 +1,5 @@
 {
-  "name": "zod-validation-error",
+  "name": "@deboxsoft/zod-validation-error",
   "version": "3.4.0",
   "description": "Wrap zod validation errors in user-friendly readable messages",
   "keywords": [
@@ -48,49 +48,53 @@
   "engines": {
     "node": ">=18.0.0"
   },
+  "type": "module",
   "scripts": {
     "typecheck": "tsc --noEmit",
     "build": "tsup --config ./tsup.config.ts",
-    "lint": "eslint lib --ext .ts",
+    "lint": "eslint --fix 'lib/**/*.ts'",
     "format": "prettier --config ./.prettierrc --ignore-path .gitignore -w .",
-    "test": "jest",
-    "coverage": "jest --coverage",
+    "test": "vitest run",
+    "test:dev": "vitest dev",
+    "coverage": "vitest run --coverage",
     "changeset": "changeset",
-    "prerelease": "npm run build && npm run test",
+    "prerelease": "pnpm run build && pnpm run test",
     "release": "changeset publish",
     "prepare": "husky install"
-  },
-  "lint-staged": {
-    "*.{js,jsx,ts,tsx}": [
-      "eslint --fix",
-      "prettier --config ./.prettierrc --write"
-    ]
   },
   "devDependencies": {
     "@changesets/changelog-github": "^0.5.0",
     "@changesets/cli": "^2.27.7",
     "@commitlint/cli": "^18.0.0",
     "@commitlint/config-conventional": "^18.0.0",
-    "@types/jest": "^29.2.4",
+    "@deboxsoft/module-core": "^3.0.0-beta.17",
     "@types/node": "^20.5.0",
-    "@typescript-eslint/eslint-plugin": "^6.4.1",
-    "@typescript-eslint/parser": "^6.4.1",
     "concurrently": "^8.2.0",
-    "eslint": "^8.4.1",
-    "eslint-config-prettier": "^9.0.0",
-    "eslint-plugin-import": "^2.29.1",
-    "eslint-plugin-prettier": "^4.2.1",
-    "husky": "^8.0.3",
-    "jest": "^29.3.1",
-    "lint-staged": "^15.0.1",
-    "prettier": "^2.8.8",
-    "rimraf": "^5.0.1",
-    "ts-jest": "^29.0.3",
     "tsup": "^8.0.2",
-    "typescript": "^5.1.6",
-    "zod": "^3.20.0"
+    "@commitlint/cz-commitlint": "^17.4.2",
+    "@faker-js/faker": "^7.5.0",
+    "@nurdiansyah/bump": "^6.1.2",
+    "@nurdiansyah/cpx": "1.5.0",
+    "@nurdiansyah/eslint-config-devel": "^9.0.8",
+    "commitizen": "^4.3.0",
+    "cross-env": "^7.0.3",
+    "dotenv": "^16.0.1",
+    "esbuild-node-loader": "^0.8.0",
+    "eslint": "^9.8.0",
+    "husky": "^8.0.0",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^3.3.3",
+    "rimraf": "^6.0.1",
+    "testdouble": "^3.16.4",
+    "ts-node": "^10.9.1",
+    "tslib": "^2.4.0",
+    "turbo": "^1.7.0",
+    "typescript": "^5.2.2",
+    "yarpm": "^1.2.0",
+    "vite": "^6.0.7",
+    "vitest": "^2.1.8"
   },
   "peerDependencies": {
-    "zod": "^3.18.0"
+    "@deboxsoft/module-core": "2.x || 3.x"
   }
 }

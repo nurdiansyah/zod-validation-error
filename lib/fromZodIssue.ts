@@ -1,4 +1,4 @@
-import * as zod from 'zod';
+import { z as zod } from '@deboxsoft/module-core';
 
 import {
   type MessageBuilder,

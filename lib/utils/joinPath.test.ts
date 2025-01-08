@@ -1,3 +1,4 @@
+import { describe, test, expect } from 'vitest';
 import { joinPath } from './joinPath.ts';
 
 describe('joinPath()', () => {

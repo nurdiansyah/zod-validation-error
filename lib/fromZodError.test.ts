@@ -1,5 +1,5 @@
-import * as zod from 'zod';
-import { ZodError } from 'zod';
+import { describe, test, expect } from 'vitest';
+import { z as zod } from '@deboxsoft/module-core';
 
 import { fromZodError } from './fromZodError.ts';
 import { ValidationError } from './ValidationError.ts';
@@ -11,7 +11,7 @@ describe('fromZodError()', () => {
     try {
       schema.parse('foobar');
     } catch (err) {
-      if (err instanceof ZodError) {
+      if (err instanceof zod.ZodError) {
         const validationError = fromZodError(err);
         expect(validationError).toBeInstanceOf(ValidationError);
         expect(validationError.message).toMatchInlineSnapshot(
@@ -35,11 +35,11 @@ describe('fromZodError()', () => {
     const input = new Error("I wish I was a ZodError, but I'm not");
 
     try {
-      // @ts-expect-error
+      // @ts-expect-error input class Error
       fromZodError(input);
     } catch (err) {
       expect(err).toBeInstanceOf(TypeError);
-      // @ts-expect-error
+      // @ts-expect-error invalid zod
       expect(err.message).toMatchInlineSnapshot(
         `"Invalid zodError param; expected instance of ZodError. Did you mean to use the "fromError" method instead?"`
       );

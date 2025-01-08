@@ -1,3 +1,4 @@
+import { describe, test, expect } from 'vitest';
 import { isValidationErrorLike } from './isValidationErrorLike.ts';
 import { ValidationError } from './ValidationError.ts';
 

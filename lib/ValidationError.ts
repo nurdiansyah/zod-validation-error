@@ -1,5 +1,5 @@
 import { isZodErrorLike } from './isZodErrorLike.ts';
-import type * as zod from 'zod';
+import type { z as zod } from '@deboxsoft/module-core';
 
 // make zod-validation-error compatible with
 // earlier to es2022 typescript configurations

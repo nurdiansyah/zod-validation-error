@@ -1,5 +1,5 @@
 import { fromZodIssue } from './fromZodIssue.ts';
-import type * as zod from 'zod';
+import type { z as zod } from '@deboxsoft/module-core';
 
 export const errorMap: zod.ZodErrorMap = (issue, ctx) => {
   const error = fromZodIssue({

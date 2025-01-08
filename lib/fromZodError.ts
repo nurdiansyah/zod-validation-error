@@ -7,7 +7,7 @@ import {
 } from './MessageBuilder.ts';
 import { isNonEmptyArray } from './utils/NonEmptyArray.ts';
 import { ValidationError } from './ValidationError.ts';
-import type * as zod from 'zod';
+import type { z as zod } from '@deboxsoft/module-core';
 
 export type ZodError = zod.ZodError;
 

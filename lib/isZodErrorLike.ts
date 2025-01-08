@@ -1,4 +1,4 @@
-import type * as zod from 'zod';
+import type { z as zod } from '@deboxsoft/module-core';
 
 export function isZodErrorLike(err: unknown): err is zod.ZodError {
   return (

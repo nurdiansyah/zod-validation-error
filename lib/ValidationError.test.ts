@@ -1,4 +1,5 @@
-import * as zod from 'zod';
+import { describe, test, expect } from 'vitest';
+import { z as zod } from '@deboxsoft/module-core';
 import { ValidationError } from './ValidationError.ts';
 
 describe('ValidationError', () => {
@@ -8,7 +9,6 @@ describe('ValidationError', () => {
 
       const err = new ValidationError(message);
       expect(err.message).toBe(message);
-      // @ts-ignore
       expect(err.cause).toBeUndefined();
       expect(err.details).toEqual([]);
     });
@@ -19,7 +19,6 @@ describe('ValidationError', () => {
 
       const err = new ValidationError(message, { cause });
       expect(err.message).toBe(message);
-      // @ts-ignore
       expect(err.cause).toEqual(cause);
       expect(err.details).toEqual([]);
     });
@@ -40,7 +39,6 @@ describe('ValidationError', () => {
         cause,
       });
       expect(err.message).toBe(message);
-      // @ts-ignore
       expect(err.cause).toEqual(cause);
       expect(err.details).toEqual(issues);
     });

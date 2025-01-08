@@ -1,4 +1,5 @@
-import * as zod from 'zod';
+import { describe, test, expect } from 'vitest';
+import { z as zod } from '@deboxsoft/module-core';
 import { isZodErrorLike } from './isZodErrorLike.ts';
 
 class CustomZodError extends Error {
@@ -33,7 +34,7 @@ describe('isZodErrorLike()', () => {
 
   test('returns false when argument resembles a ZodError but does not have issues', () => {
     const err = new CustomZodError('foobar');
-    // @ts-expect-error
+    // @ts-expect-error terjadi error ketika undefined
     err.issues = undefined;
 
     expect(isZodErrorLike(err)).toEqual(false);

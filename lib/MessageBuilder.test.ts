@@ -1,4 +1,5 @@
-import * as zod from 'zod';
+import { describe, test, expect } from 'vitest';
+import { z as zod } from '@deboxsoft/module-core';
 
 import { createMessageBuilder } from './MessageBuilder.ts';
 import { isZodErrorLike } from './isZodErrorLike.ts';

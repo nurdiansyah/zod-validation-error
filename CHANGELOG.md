@@ -1,5 +1,11 @@
 # @causaly/zod-validation-error
 
+## 3.4.1
+
+### Patch Changes
+
+- d70e8aa: mengganti zod dengan zod yang di wrapper dalam @deboxsoft/module-core
+
 ## 3.4.0
 
 ### Minor Changes
